@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main Menu.unity
     guid: 1cc4ef05d63a8b44c9ef44e1243e7f92
+  - enabled: 1
+    path: Assets/Scenes/SampleScene.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/MarissaScene.unity
+    guid: 8cb05444ce4762444ba06a45c895a840
+  - enabled: 1
+    path: Assets/Scenes/SiyunTestScene.unity
+    guid: a6e09748c636a4eb5ad570b3759177a0
   m_configObjects: {}
