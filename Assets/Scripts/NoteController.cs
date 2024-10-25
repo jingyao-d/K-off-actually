@@ -3,19 +3,11 @@ using System.Collections.Generic;
 using TreeEditor;
 using UnityEngine;
 using UnityEngine.UI;
-
-public class NoteScroll : MonoBehaviour
+public class NoteController : MonoBehaviour
 {
-    RectTransform rectTransform;
-    private Vector3 moveVector = new Vector3 (1,0,0);
+    [SerializeField] public string note;
+    private Vector3 moveVector = new Vector3 (1f,0f,0f);
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         transform.position += moveVector;

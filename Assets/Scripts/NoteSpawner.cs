@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
+using UnityEngine.InputSystem;
 
 public class NoteSpawner : MonoBehaviour
 {
@@ -14,7 +15,12 @@ public class NoteSpawner : MonoBehaviour
     [SerializeField] GameObject noteL;
     [SerializeField] GameObject noteSpawnPosition;
 
-    void SpawnNote(GameObject noteToSpawn)
+    void Start()
+    {
+
+    }
+
+    public void SpawnNote(GameObject noteToSpawn)
     {
         Instantiate(noteToSpawn,noteSpawnPosition.transform);
     }
