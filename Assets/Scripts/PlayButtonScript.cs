@@ -5,8 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class ButtonScript : MonoBehaviour
 {
+    [SerializeField] AudioSource SFXSource;
+    [SerializeField] AudioClip buttonClip;
+
     // Start is called before the first frame update
     public void ChangeScene() {
-        SceneManager.LoadScene("MarissaScene");
+        SFXSource.PlayOneShot(buttonClip);
+        DontDestroyOnLoad(SFXSource);
+        SceneManager.LoadScene("SampleScene");
     }
 }
