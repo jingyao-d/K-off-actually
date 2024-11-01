@@ -1338,7 +1338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SFXSource: {fileID: 1335586651}
-  buttonClip: {fileID: 8300000, guid: 414931ce3d36ead41b31635c58ce12bd, type: 3}
+  buttonClip: {fileID: 8300000, guid: ed684ef806c7d254891673c108eabd81, type: 3}
 --- !u!4 &1994476032
 Transform:
   m_ObjectHideFlags: 0
