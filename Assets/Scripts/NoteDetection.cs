@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class NoteDetection : MonoBehaviour
 {
     GameObject[] notes;
+    private int score;
 
     void Update()
     {
@@ -26,7 +27,8 @@ public class NoteDetection : MonoBehaviour
 
                 if(notePositionX > 1600 && notePositionX < 1700)
                 {
-                    Debug.Log("Perfect!");
+                    Debug.Log("Note Pressed Successfully");
+                    score = score + 100;
                     Destroy(notes[i]);
                 }
             }
@@ -46,6 +48,7 @@ public class NoteDetection : MonoBehaviour
                 if(notePositionX > 1600 && notePositionX < 1700)
                 {
                     Debug.Log("Note Pressed Successfully");
+                    score = score + 100;
                     Destroy(notes[i]);
                 }
             }
@@ -65,6 +68,7 @@ public class NoteDetection : MonoBehaviour
                 if(notePositionX > 1600 && notePositionX < 1700)
                 {
                     Debug.Log("Note Pressed Successfully");
+                    score = score + 100;
                     Destroy(notes[i]);
                 }
             }
@@ -84,6 +88,7 @@ public class NoteDetection : MonoBehaviour
                 if(notePositionX > 1600 && notePositionX < 1700)
                 {
                     Debug.Log("Note Pressed Successfully");
+                    score = score + 100;
                     Destroy(notes[i]);
                 }
             }
@@ -103,6 +108,7 @@ public class NoteDetection : MonoBehaviour
                 if(notePositionX > 1600 && notePositionX < 1700)
                 {
                     Debug.Log("Note Pressed Successfully");
+                    score = score + 100;
                     Destroy(notes[i]);
                 }
             }
@@ -122,6 +128,7 @@ public class NoteDetection : MonoBehaviour
                 if(notePositionX > 1600 && notePositionX < 1700)
                 {
                     Debug.Log("Note Pressed Successfully");
+                    score = score + 100;
                     Destroy(notes[i]);
                 }
             }

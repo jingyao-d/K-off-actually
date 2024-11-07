@@ -17,7 +17,7 @@ public class NoteSpawner : MonoBehaviour
 
     void Start()
     {
-
+        SpawnNote(noteS);
     }
 
     public void SpawnNote(GameObject noteToSpawn)

@@ -10,7 +10,7 @@ public class NoteController : MonoBehaviour
 
     void Update()
     {
-        transform.position += moveVector;
+        transform.position += moveVector * 0.5f;
 
         if(transform.position.x > 2000)
         {
