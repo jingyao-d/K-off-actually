@@ -9,7 +9,7 @@ public class testfall : MonoBehaviour
 
     private MeshRenderer mr2;
 
-    [SerializeField] int speed = 0;
+    [SerializeField] int speed;
 
     // Start is called before the first frame update
     void Start()
@@ -21,14 +21,15 @@ public class testfall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponent<Rigidbody>().velocity = new Vector2(speed * movementVector.x, GetComponent<Rigidbody>().velocity.y);
+        rb2.velocity = new Vector2(movementVector.x, -5);
     }
 
-    void OnCollisionEnter(Collision collision) {
-        //transform.localPosition.y = 6;
+    void OnTriggerEnter(Collider collider) {
+        Debug.Log("EFEFJdf");
+        gameObject.transform.localPosition = new Vector3(-2,6,-2);
     }
 
-    void OnCollisionExit(Collision collision) {
+    void OnTriggerExit(Collider collider) {
 
     }
 }
