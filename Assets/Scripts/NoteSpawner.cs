@@ -13,15 +13,58 @@ public class NoteSpawner : MonoBehaviour
     [SerializeField] GameObject noteJ;
     [SerializeField] GameObject noteK;
     [SerializeField] GameObject noteL;
-    [SerializeField] GameObject noteSpawnPosition;
+    [SerializeField] GameObject noteSSpawnPostiion;
+    [SerializeField] GameObject noteDSpawnPostiion;
+    [SerializeField] GameObject noteFSpawnPostiion;
+    [SerializeField] GameObject noteJSpawnPostiion;
+    [SerializeField] GameObject noteKSpawnPostiion;
+    [SerializeField] GameObject noteLSpawnPostiion;
+    Transform noteSpawnPosition;
 
     void Start()
     {
         SpawnNote(noteS);
+        SpawnNote(noteD);
+        SpawnNote(noteF);
+        SpawnNote(noteJ);
+        SpawnNote(noteK);
+        SpawnNote(noteL);
     }
 
     public void SpawnNote(GameObject noteToSpawn)
     {
-        Instantiate(noteToSpawn,noteSpawnPosition.transform);
+        NoteController noteController = noteToSpawn.GetComponent<NoteController>();
+
+        if(noteController.note == "S")
+        {
+            noteSpawnPosition = noteSSpawnPostiion.transform;
+            Instantiate(noteToSpawn,noteSpawnPosition);
+        }
+        else if(noteController.note == "D")
+        {
+            noteSpawnPosition = noteDSpawnPostiion.transform;
+            Instantiate(noteToSpawn,noteSpawnPosition);
+        }
+        else if(noteController.note == "F")
+        {
+            noteSpawnPosition = noteFSpawnPostiion.transform;
+            Instantiate(noteToSpawn,noteSpawnPosition);
+        }
+        else if(noteController.note == "J")
+        {
+            noteSpawnPosition = noteJSpawnPostiion.transform;
+            Instantiate(noteToSpawn,noteSpawnPosition);
+        }
+        else if(noteController.note == "K")
+        {
+            noteSpawnPosition = noteKSpawnPostiion.transform;
+            Instantiate(noteToSpawn,noteSpawnPosition);
+        }
+        else if(noteController.note == "L")
+        {
+            noteSpawnPosition = noteLSpawnPostiion.transform;
+            Instantiate(noteToSpawn,noteSpawnPosition);
+        }
+
     }
 }
