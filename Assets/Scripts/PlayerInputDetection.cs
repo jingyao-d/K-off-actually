@@ -14,6 +14,8 @@ public class PlayerInputDetection : MonoBehaviour
     [SerializeField] GameObject m_L;
     private Vector3 scaleChange = new Vector3(0.0f, 1.0f, 0.0f);
 
+    [SerializeField] int pointRangeStart;
+    [SerializeField] int pointRangeEnd;
     private void Start()
     {
         score = 0;
@@ -35,9 +37,8 @@ public class PlayerInputDetection : MonoBehaviour
             {
                 int notePositionX = (int)notes[i].transform.position.x;
 
-                if(notePositionX > 1750 && notePositionX < 1800)
+                if(notePositionX > pointRangeStart && notePositionX < pointRangeEnd)
                 {
-                    Debug.Log("Note Pressed Successfully");
                     score++;
                     Destroy(notes[i]);
                 }
@@ -56,9 +57,8 @@ public class PlayerInputDetection : MonoBehaviour
             {
                 int notePositionX = (int)notes[i].transform.position.x;
 
-                if(notePositionX > 1750 && notePositionX < 1800)
+                if(notePositionX > pointRangeStart && notePositionX < pointRangeEnd)
                 {
-                    Debug.Log("Note Pressed Successfully");
                     score++;
                     Destroy(notes[i]);
                 }
@@ -77,9 +77,8 @@ public class PlayerInputDetection : MonoBehaviour
             {
                 int notePositionX = (int)notes[i].transform.position.x;
 
-                if(notePositionX > 1750 && notePositionX < 1800)
+                if(notePositionX > pointRangeStart && notePositionX < pointRangeEnd)
                 {
-                    Debug.Log("Note Pressed Successfully");
                     score++;
                     Destroy(notes[i]);
                 }
@@ -98,9 +97,8 @@ public class PlayerInputDetection : MonoBehaviour
             {
                 int notePositionX = (int)notes[i].transform.position.x;
 
-                if(notePositionX > 1750 && notePositionX < 1800)
+                if(notePositionX > pointRangeStart && notePositionX < pointRangeEnd)
                 {
-                    Debug.Log("Note Pressed Successfully");
                     score++;
                     Destroy(notes[i]);
                 }
@@ -119,9 +117,8 @@ public class PlayerInputDetection : MonoBehaviour
             {
                 int notePositionX = (int)notes[i].transform.position.x;
 
-                if(notePositionX > 1750 && notePositionX < 1800)
+                if(notePositionX > pointRangeStart && notePositionX < pointRangeEnd)
                 {
-                    Debug.Log("Note Pressed Successfully");
                     score++;
                     Destroy(notes[i]);
                 }
@@ -140,15 +137,15 @@ public class PlayerInputDetection : MonoBehaviour
             {
                 int notePositionX = (int)notes[i].transform.position.x;
 
-                if(notePositionX > 1750 && notePositionX < 1800)
+                if(notePositionX > pointRangeStart && notePositionX < pointRangeEnd)
                 {
-                    Debug.Log("Note Pressed Successfully");
                     score++;
                     Destroy(notes[i]);
                 }
             }
         }
     }
+
     IEnumerator BlockCoroutine(GameObject m_Something)
     {
         //Print the time of when the function is first called.

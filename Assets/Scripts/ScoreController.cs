@@ -16,6 +16,6 @@ public class ScoreController : MonoBehaviour
 
     void Update()
     {
-        scoreText.text = "Score:" + playerInputDetection.score;
+        scoreText.text = "Score: " + playerInputDetection.score;
     }
 }
