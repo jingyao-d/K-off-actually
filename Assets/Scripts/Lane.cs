@@ -1,4 +1,5 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Melanchall.DryWetMidi.Interaction;
@@ -24,7 +25,7 @@ public class Lane : MonoBehaviour
     {
         foreach(var note in array)
         {
-            if (note.noteName == noteRestriction)
+            if (note.NoteName == noteRestriction)
             {
                 var metricTimeSpan = TimeConverter.ConvertTo<MetricTimeSpan>(note.Time, songManager.midiFile.GetTempoMap());
                 timeStamps.Add((double)metricTimeSpan.Minutes * 60f + metricTimeSpan.Seconds + (double)metricTimeSpan.Milliseconds / 1000f);
@@ -44,6 +45,33 @@ public class Lane : MonoBehaviour
                 note.GetComponent<Note>().assignedTime = (float)timeStamps[spawnIndex];
                 spawnIndex++;
             }
+        }
+
+        if (inputIndex < timeStamps.Count)
+        {
+            double timeStamp = timeStamps[inputIndex];
+            double MoE = songManager.Instance.MoE;
+            double audioTime = songManager.GetAudioSourceTime() - (songManager.Instance.inputDelayms / 1000.0);
+
+            if (Input.GetKeyDown(input))
+            {
+                if (Math.Abs(audioTime - timeStamp) < MoE)
+                {
+                    print($"Hit on {inputIndex} note");
+                    Destroy(notes[inputIndex].gameObject);
+                    inputIndex++;
+                }
+                else
+                {
+                    print($"Hit inaccurate on {inputIndex} note with {Math.Abs(audioTime - timeStamp)} delay");
+                }
+            }
+            if (timeStamp + MoE <= audioTime)
+            {
+                print($"Missed {inputIndex} note");
+                inputIndex++;
+            }
+
         }
     }
 }
