@@ -5,7 +5,21 @@ using UnityEngine;
 public class PlayerInputDetection : MonoBehaviour
 {
     GameObject[] notes;
-    private int score;
+    [SerializeField] public int score;
+    [SerializeField] GameObject m_S;
+    [SerializeField] GameObject m_D;
+    [SerializeField] GameObject m_F;
+    [SerializeField] GameObject m_J;
+    [SerializeField] GameObject m_K;
+    [SerializeField] GameObject m_L;
+    private Vector3 scaleChange = new Vector3(0.0f, 1.0f, 0.0f);
+
+    [SerializeField] int pointRangeStart;
+    [SerializeField] int pointRangeEnd;
+    private void Start()
+    {
+        score = 0;
+    }
 
     void Update()
     {
@@ -13,6 +27,7 @@ public class PlayerInputDetection : MonoBehaviour
     }
     public void OnS()
     {
+        StartCoroutine(BlockCoroutine(m_S));
 
         for(int i = 0; i < notes.Length; i++)
         {
@@ -22,10 +37,9 @@ public class PlayerInputDetection : MonoBehaviour
             {
                 int notePositionX = (int)notes[i].transform.position.x;
 
-                if(notePositionX > 1600 && notePositionX < 1700)
+                if(notePositionX > pointRangeStart && notePositionX < pointRangeEnd)
                 {
-                    Debug.Log("Note Pressed Successfully");
-                    score = score + 100;
+                    score++;
                     Destroy(notes[i]);
                 }
             }
@@ -33,6 +47,7 @@ public class PlayerInputDetection : MonoBehaviour
     }
     public void OnD()
     {
+        StartCoroutine(BlockCoroutine(m_D));
 
         for(int i = 0; i < notes.Length; i++)
         {
@@ -42,10 +57,9 @@ public class PlayerInputDetection : MonoBehaviour
             {
                 int notePositionX = (int)notes[i].transform.position.x;
 
-                if(notePositionX > 1600 && notePositionX < 1700)
+                if(notePositionX > pointRangeStart && notePositionX < pointRangeEnd)
                 {
-                    Debug.Log("Note Pressed Successfully");
-                    score = score + 100;
+                    score++;
                     Destroy(notes[i]);
                 }
             }
@@ -53,6 +67,7 @@ public class PlayerInputDetection : MonoBehaviour
     }
     public void OnF()
     {
+        StartCoroutine(BlockCoroutine(m_F));
 
         for(int i = 0; i < notes.Length; i++)
         {
@@ -62,10 +77,9 @@ public class PlayerInputDetection : MonoBehaviour
             {
                 int notePositionX = (int)notes[i].transform.position.x;
 
-                if(notePositionX > 1600 && notePositionX < 1700)
+                if(notePositionX > pointRangeStart && notePositionX < pointRangeEnd)
                 {
-                    Debug.Log("Note Pressed Successfully");
-                    score = score + 100;
+                    score++;
                     Destroy(notes[i]);
                 }
             }
@@ -73,6 +87,7 @@ public class PlayerInputDetection : MonoBehaviour
     }
     public void OnJ()
     {
+        StartCoroutine(BlockCoroutine(m_J));
 
         for(int i = 0; i < notes.Length; i++)
         {
@@ -82,10 +97,9 @@ public class PlayerInputDetection : MonoBehaviour
             {
                 int notePositionX = (int)notes[i].transform.position.x;
 
-                if(notePositionX > 1600 && notePositionX < 1700)
+                if(notePositionX > pointRangeStart && notePositionX < pointRangeEnd)
                 {
-                    Debug.Log("Note Pressed Successfully");
-                    score = score + 100;
+                    score++;
                     Destroy(notes[i]);
                 }
             }
@@ -93,6 +107,7 @@ public class PlayerInputDetection : MonoBehaviour
     }
     public void OnK()
     {
+        StartCoroutine(BlockCoroutine(m_K));
 
         for(int i = 0; i < notes.Length; i++)
         {
@@ -102,10 +117,9 @@ public class PlayerInputDetection : MonoBehaviour
             {
                 int notePositionX = (int)notes[i].transform.position.x;
 
-                if(notePositionX > 1600 && notePositionX < 1700)
+                if(notePositionX > pointRangeStart && notePositionX < pointRangeEnd)
                 {
-                    Debug.Log("Note Pressed Successfully");
-                    score = score + 100;
+                    score++;
                     Destroy(notes[i]);
                 }
             }
@@ -113,6 +127,7 @@ public class PlayerInputDetection : MonoBehaviour
     }
     public void OnL()
     {
+        StartCoroutine(BlockCoroutine(m_L));
 
         for(int i = 0; i < notes.Length; i++)
         {
@@ -122,13 +137,25 @@ public class PlayerInputDetection : MonoBehaviour
             {
                 int notePositionX = (int)notes[i].transform.position.x;
 
-                if(notePositionX > 1600 && notePositionX < 1700)
+                if(notePositionX > pointRangeStart && notePositionX < pointRangeEnd)
                 {
-                    Debug.Log("Note Pressed Successfully");
-                    score = score + 100;
+                    score++;
                     Destroy(notes[i]);
                 }
             }
         }
+    }
+
+    IEnumerator BlockCoroutine(GameObject m_Something)
+    {
+        //Print the time of when the function is first called.
+        m_Something.transform.localScale += scaleChange;
+        m_Something.transform.position += new Vector3(0f, scaleChange.y * 0.5f, 0f);
+
+        yield return new WaitForSeconds(0.2f); // hardcoded, needs to change according to song
+
+        //After we have waited 5 seconds print the time again.
+        m_Something.transform.localScale -= scaleChange;
+        m_Something.transform.position -= new Vector3(0f, scaleChange.y * 0.5f, 0f);
     }
 }
