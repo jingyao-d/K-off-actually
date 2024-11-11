@@ -1,8 +1,8 @@
-using System.Collections;
+using Melanchall.DryWetMidi.Interaction;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Melanchall.DryWetMidi.Interaction;
 
 public class Lane : MonoBehaviour
 {
@@ -25,8 +25,10 @@ public class Lane : MonoBehaviour
     {
         foreach(var note in array)
         {
+
             if (note.NoteName == noteRestriction)
             {
+
                 var metricTimeSpan = TimeConverter.ConvertTo<MetricTimeSpan>(note.Time, songManager.midiFile.GetTempoMap());
                 timeStamps.Add((double)metricTimeSpan.Minutes * 60f + metricTimeSpan.Seconds + (double)metricTimeSpan.Milliseconds / 1000f);
             }

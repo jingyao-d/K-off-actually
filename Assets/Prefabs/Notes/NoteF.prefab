@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 210617193740147705}
   - component: {fileID: 429100073120606139}
   - component: {fileID: 7330748256825212133}
+  - component: {fileID: 3416090421595144649}
   m_Layer: 5
   m_Name: NoteF
   m_TagString: Note
@@ -28,7 +29,7 @@ RectTransform:
   m_GameObject: {fileID: 3299244071430542874}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2331557223045195707}
@@ -90,6 +91,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   note: F
+--- !u!114 &3416090421595144649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3299244071430542874}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05739dfc0555cd040ac649ec338ba838, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  assignedTime: 0
 --- !u!1 &3679407989580663348
 GameObject:
   m_ObjectHideFlags: 0

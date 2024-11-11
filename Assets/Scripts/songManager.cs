@@ -14,16 +14,16 @@ public class songManager : MonoBehaviour
     public float songDelay; //seconds
     public double MoE;
     public int inputDelayms;
-
+    public Lane[] lanes;
     public string fileLocation;
     public float noteTime;
-    public float noteSpawnY;
-    public float noteTapY;
-    public float noteDespawnY
+    public float noteSpawnX;
+    public float noteTapX;
+    public float noteDespawnX
     {
         get
         {
-            return noteTapY - (noteSpawnY - noteTapY);
+            return noteTapX - (noteSpawnX - noteTapX);
         }
     }
 
@@ -40,7 +40,6 @@ public class songManager : MonoBehaviour
     {
         
     }
-
     private void ReadFromFile()
     {
         midiFile = MidiFile.Read(Application.streamingAssetsPath + "/" + fileLocation);
@@ -53,6 +52,10 @@ public class songManager : MonoBehaviour
         var array = new Melanchall.DryWetMidi.Interaction.Note[notes.Count];
         notes.CopyTo(array, 0);
 
+        foreach (var lane in lanes)
+        {
+            lane.SetTimeStamps(array);
+        }
         Invoke(nameof(StartSong), songDelay);
     }
 
