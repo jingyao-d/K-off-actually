@@ -17,6 +17,7 @@ public class Note : MonoBehaviour
     {
         double timeSinceInstantiated = songManager.GetAudioSourceTime() - timeInstantiated;
         float t = (float)(timeSinceInstantiated / (songManager.Instance.noteTime * 2));
+
         if (t > 1)
             Destroy(gameObject);
         else

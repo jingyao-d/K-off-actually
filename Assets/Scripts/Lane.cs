@@ -59,18 +59,21 @@ public class Lane : MonoBehaviour
             {
                 if (Math.Abs(audioTime - timeStamp) < MoE)
                 {
+                    hitMissAudio.Hit();
                     print($"Hit on {inputIndex} note");
                     Destroy(notes[inputIndex].gameObject);
                     inputIndex++;
                 }
                 else
                 {
+                    hitMissAudio.Miss();
                     print($"Hit inaccurate on {inputIndex} note with {Math.Abs(audioTime - timeStamp)} delay");
                 }
             }
             if (timeStamp + MoE <= audioTime)
             {
                 print($"Missed {inputIndex} note");
+                hitMissAudio.Miss();
                 inputIndex++;
             }
 
