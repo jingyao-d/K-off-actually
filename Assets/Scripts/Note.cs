@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Note : MonoBehaviour
 {
@@ -9,6 +11,8 @@ public class Note : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GetComponent<Image>().enabled = false;
+        gameObject.transform.GetChild(0).gameObject.SetActive(false);
         timeInstantiated = songManager.GetAudioSourceTime();
     }
 
@@ -23,6 +27,8 @@ public class Note : MonoBehaviour
         else
         {
             transform.localPosition = Vector3.Lerp(Vector3.right * songManager.Instance.noteSpawnX, Vector3.right * songManager.Instance.noteDespawnX, t);
+            GetComponent<Image>().enabled = true;
+            gameObject.transform.GetChild(0).gameObject.SetActive(true);
         }
 
     }

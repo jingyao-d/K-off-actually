@@ -71,7 +71,7 @@ public class Lane : MonoBehaviour
                 }
                 else
                 {
-                    //hitMissAudio.Miss();
+                    hitMissAudio.Miss();
                     print($"Hit inaccurate on {inputIndex} note with {Math.Abs(audioTime - timeStamp)} delay");
                 }
             }
