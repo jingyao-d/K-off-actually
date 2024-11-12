@@ -12,6 +12,12 @@ public class ColorshiftScript : MonoBehaviour
     private int colorSet = 0;
     
     // Start is called before the first frame update
+
+    IEnumerator ColorWait() {
+        yield return new WaitForSeconds(0.05f);
+        mr.material.SetColor("_Color", Color.white);
+    }
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -35,6 +41,6 @@ public class ColorshiftScript : MonoBehaviour
     }
 
     void OnCollisionExit(Collision collision) {
-
+        StartCoroutine(ColorWait());
     }
 }
