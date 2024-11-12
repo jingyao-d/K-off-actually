@@ -2436,7 +2436,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 800ae8bf67217954686da7f2967c9439, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f3a5ea8cdf905954cbd94218e429e062, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -2535,8 +2535,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1555444118}
-  songDelay: 4
-  MoE: 0.1
+  songDelay: 0
+  MoE: 0.125
   inputDelayms: 0
   lanes:
   - {fileID: 1091495145}
@@ -2545,7 +2545,7 @@ MonoBehaviour:
   - {fileID: 1879012007}
   - {fileID: 1080686764}
   - {fileID: 2138702485}
-  fileLocation: untitled.mid
+  fileLocation: test33.mid
   noteTime: 3
   noteSpawnX: -2250
   noteTapX: 1050
