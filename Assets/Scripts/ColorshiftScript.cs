@@ -25,7 +25,7 @@ public class ColorshiftScript : MonoBehaviour
         
     }
 
-    void OnTriggerEnter(Collider collider) {
+    void OnCollisionEnter(Collision collision) {
         mr.material.SetColor("_Color", colorList[colorSet]);
         if (colorSet == 2) {
             colorSet = 0;
@@ -34,7 +34,7 @@ public class ColorshiftScript : MonoBehaviour
         }
     }
 
-    void OnTriggerExit(Collider collider) {
+    void OnCollisionExit(Collision collision) {
 
     }
 }
