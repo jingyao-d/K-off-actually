@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class Lane : MonoBehaviour
 {
@@ -15,10 +16,12 @@ public class Lane : MonoBehaviour
     int spawnIndex = 0;
     int inputIndex = 0;
 
+    ScoreController scoreController;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        scoreController = FindObjectOfType<ScoreController>();
     }
 
     public void SetTimeStamps(Melanchall.DryWetMidi.Interaction.Note[] array)
@@ -63,10 +66,12 @@ public class Lane : MonoBehaviour
                     print($"Hit on {inputIndex} note");
                     Destroy(notes[inputIndex].gameObject);
                     inputIndex++;
+                    scoreController.streak++;
+                    scoreController.score = scoreController.score + 100*scoreController.streak;
                 }
                 else
                 {
-                    hitMissAudio.Miss();
+                    //hitMissAudio.Miss();
                     print($"Hit inaccurate on {inputIndex} note with {Math.Abs(audioTime - timeStamp)} delay");
                 }
             }
@@ -75,6 +80,7 @@ public class Lane : MonoBehaviour
                 print($"Missed {inputIndex} note");
                 hitMissAudio.Miss();
                 inputIndex++;
+                scoreController.streak = 0;
             }
 
         }

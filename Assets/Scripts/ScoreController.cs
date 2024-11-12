@@ -7,15 +7,13 @@ using UnityEngine.UI;
 public class ScoreController : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI scoreText;
-    private PlayerInputDetection playerInputDetection;
-
-    private void Start()
-    {
-        playerInputDetection = GetComponent<PlayerInputDetection>();
-    }
+    [SerializeField] TextMeshProUGUI streakText;
+    public int score = 0;
+    public int streak = 0;
 
     void Update()
     {
-        scoreText.text = "Score: " + playerInputDetection.score;
+        scoreText.text = "Score: " + score;
+        streakText.text = "x" + streak + " streak!";
     }
 }
