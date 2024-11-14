@@ -2546,7 +2546,7 @@ MonoBehaviour:
   - {fileID: 1080686764}
   - {fileID: 2138702485}
   fileLocation: test33.mid
-  noteTime: 3
+  noteTime: 5
   noteSpawnX: -2250
   noteTapX: 1050
 --- !u!4 &1555444120

@@ -12,6 +12,6 @@ public class ButtonScript : MonoBehaviour
     public void ChangeScene() {
         SFXSource.PlayOneShot(buttonClip);
         DontDestroyOnLoad(SFXSource);
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("GameScene");
     }
 }
