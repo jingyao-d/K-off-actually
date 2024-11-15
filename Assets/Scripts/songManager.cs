@@ -11,6 +11,7 @@ public class songManager : MonoBehaviour
 {
     public static songManager Instance;
     public AudioSource audioSource;
+    public ScoreController scoreController;
     public float songDelay; //seconds
     public double MoE;
     public int inputDelayms;
@@ -26,6 +27,7 @@ public class songManager : MonoBehaviour
             return noteTapX - (noteSpawnX - noteTapX);
         }
     }
+    public int totalNoteCount;
 
     public static MidiFile midiFile;
     // Start is called before the first frame update
@@ -33,12 +35,17 @@ public class songManager : MonoBehaviour
     {
         Instance = this;
         ReadFromFile();
+
+        scoreController = FindObjectOfType<ScoreController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(!audioSource.isPlaying)
+        {
+            scoreController.ShowScoreScreen();
+        }
     }
     private void ReadFromFile()
     {
@@ -51,6 +58,7 @@ public class songManager : MonoBehaviour
         var notes = midiFile.GetNotes();
         var array = new Melanchall.DryWetMidi.Interaction.Note[notes.Count];
         notes.CopyTo(array, 0);
+        totalNoteCount = array.Length;
 
         foreach (var lane in lanes)
         {

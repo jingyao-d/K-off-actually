@@ -77,7 +77,7 @@ public class Lane : MonoBehaviour
             }
             if (timeStamp + MoE <= audioTime)
             {
-                print($"Missed {inputIndex} note");
+                //print($"Missed {inputIndex} note");
                 hitMissAudio.Miss();
                 inputIndex++;
                 scoreController.streak = 0;
