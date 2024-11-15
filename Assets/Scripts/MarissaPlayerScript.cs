@@ -10,6 +10,7 @@ public class MarissaPlayerScript : MonoBehaviour
     [SerializeField] GameObject m_J;
     [SerializeField] GameObject m_K;
     [SerializeField] GameObject m_L;
+    [SerializeField] GameObject m_Space;
     private Vector3 scaleChange = new Vector3(0.0f, 1.0f, 0.0f);
     void OnS()
     {
@@ -42,6 +43,12 @@ public class MarissaPlayerScript : MonoBehaviour
         StartCoroutine(BlockCoroutine(m_L));
     }
 
+    void OnSpace()
+    {
+        Debug.Log("Space");
+        StartCoroutine(BlockCoroutine(m_Space));
+    }
+
     IEnumerator BlockCoroutine(GameObject m_Something)
     {
         //Print the time of when the function is first called.
@@ -49,7 +56,7 @@ public class MarissaPlayerScript : MonoBehaviour
         m_Something.transform.position -= new Vector3(0f, scaleChange.y * 0.5f, 0f);
         Debug.Log("Started Coroutine at timestamp : " + Time.time);
 
-        yield return new WaitForSeconds(1f); // hardcoded, needs to change according to song
+        yield return new WaitForSeconds(0.2f); // hardcoded, needs to change according to song
 
         //After we have waited 5 seconds print the time again.
         m_Something.transform.localScale -= scaleChange;
