@@ -11,6 +11,7 @@ public class songManager : MonoBehaviour
 {
     public static songManager Instance;
     public AudioSource audioSource;
+    public ScoreController scoreController;
     public float songDelay; //seconds
     public double MoE;
     public int inputDelayms;
@@ -26,19 +27,54 @@ public class songManager : MonoBehaviour
             return noteTapX - (noteSpawnX - noteTapX);
         }
     }
-
+    public int totalNoteCount;
+    public int maxScore;
     public static MidiFile midiFile;
     // Start is called before the first frame update
+
     void Start()
     {
+        scoreController = FindObjectOfType<ScoreController>();
+
         Instance = this;
-        ReadFromFile();
+        if (Application.streamingAssetsPath.StartsWith("http://") || Application.streamingAssetsPath.StartsWith("https://"))
+        {
+            StartCoroutine(ReadFromWebsite());
+        }
+        else
+        {
+            ReadFromFile();
+        }
     }
 
+    private IEnumerator ReadFromWebsite()
+    {
+        using (UnityWebRequest www = UnityWebRequest.Get(Application.streamingAssetsPath + "/" + fileLocation))
+        {
+            yield return www.SendWebRequest();
+
+            if (www.isNetworkError || www.isHttpError)
+            {
+                Debug.LogError(www.error);
+            }
+            else
+            {
+                byte[] results = www.downloadHandler.data;
+                using (var stream = new MemoryStream(results))
+                {
+                    midiFile = MidiFile.Read(stream);
+                    GetDataFromMidi();
+                }
+            }
+        }
+    }
     // Update is called once per frame
     void Update()
     {
-        
+        if(!audioSource.isPlaying)
+        {
+            scoreController.ShowScoreScreen();
+        }
     }
     private void ReadFromFile()
     {
@@ -51,6 +87,7 @@ public class songManager : MonoBehaviour
         var notes = midiFile.GetNotes();
         var array = new Melanchall.DryWetMidi.Interaction.Note[notes.Count];
         notes.CopyTo(array, 0);
+        maxScore = scoreController.CalculateMaxScore(array.Length);
 
         foreach (var lane in lanes)
         {
