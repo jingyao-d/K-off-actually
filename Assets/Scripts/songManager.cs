@@ -29,12 +29,41 @@ public class songManager : MonoBehaviour
 
     public static MidiFile midiFile;
     // Start is called before the first frame update
+
     void Start()
     {
         Instance = this;
-        ReadFromFile();
+        if (Application.streamingAssetsPath.StartsWith("http://") || Application.streamingAssetsPath.StartsWith("https://"))
+        {
+            StartCoroutine(ReadFromWebsite());
+        }
+        else
+        {
+            ReadFromFile();
+        }
     }
 
+    private IEnumerator ReadFromWebsite()
+    {
+        using (UnityWebRequest www = UnityWebRequest.Get(Application.streamingAssetsPath + "/" + fileLocation))
+        {
+            yield return www.SendWebRequest();
+
+            if (www.isNetworkError || www.isHttpError)
+            {
+                Debug.LogError(www.error);
+            }
+            else
+            {
+                byte[] results = www.downloadHandler.data;
+                using (var stream = new MemoryStream(results))
+                {
+                    midiFile = MidiFile.Read(stream);
+                    GetDataFromMidi();
+                }
+            }
+        }
+    }
     // Update is called once per frame
     void Update()
     {
