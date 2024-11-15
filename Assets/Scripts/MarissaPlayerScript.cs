@@ -15,8 +15,6 @@ public class MarissaPlayerScript : MonoBehaviour
     {
         Debug.Log("S");
         StartCoroutine(BlockCoroutine(m_S));
-
-
     }
     void OnD()
     {
@@ -48,14 +46,14 @@ public class MarissaPlayerScript : MonoBehaviour
     {
         //Print the time of when the function is first called.
         m_Something.transform.localScale += scaleChange;
-        m_Something.transform.position += new Vector3(0f, scaleChange.y * 0.5f, 0f);
+        m_Something.transform.position -= new Vector3(0f, scaleChange.y * 0.5f, 0f);
         Debug.Log("Started Coroutine at timestamp : " + Time.time);
 
-        yield return new WaitForSeconds(0.2f); // hardcoded, needs to change according to song
+        yield return new WaitForSeconds(1f); // hardcoded, needs to change according to song
 
         //After we have waited 5 seconds print the time again.
         m_Something.transform.localScale -= scaleChange;
-        m_Something.transform.position -= new Vector3(0f, scaleChange.y * 0.5f, 0f);
+        m_Something.transform.position += new Vector3(0f, scaleChange.y * 0.5f, 0f);
         Debug.Log("Finished Coroutine at timestamp : " + Time.time);
     }
 }

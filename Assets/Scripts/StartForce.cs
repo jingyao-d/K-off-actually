@@ -6,7 +6,7 @@ public class StartForce : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] public Vector3 startForce;
-    public Rigidbody rb;
+    private Rigidbody rb;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
