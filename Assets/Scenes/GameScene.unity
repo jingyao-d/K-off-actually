@@ -1937,6 +1937,7 @@ MonoBehaviour:
   m_J: {fileID: 478538160}
   m_K: {fileID: 918759489}
   m_L: {fileID: 1912476020}
+  m_Space: {fileID: 1106935488}
 --- !u!114 &1057569921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2084,7 +2085,7 @@ GameObject:
   - component: {fileID: 1106935490}
   - component: {fileID: 1106935489}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: Space Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

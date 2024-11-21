@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using UnityEngine;
 
 public class PlayerInputDetection : MonoBehaviour
@@ -10,6 +11,7 @@ public class PlayerInputDetection : MonoBehaviour
     [SerializeField] GameObject m_J;
     [SerializeField] GameObject m_K;
     [SerializeField] GameObject m_L;
+    [SerializeField] GameObject m_Space;
     private Vector3 scaleChange = new Vector3(0.0f, 1.0f, 0.0f);
     public void OnS()
     {
@@ -34,6 +36,10 @@ public class PlayerInputDetection : MonoBehaviour
     public void OnL()
     {
         StartCoroutine(BlockCoroutine(m_L));
+    }
+    public void OnSpace()
+    {
+        StartCoroutine(BlockCoroutine(m_Space));
     }
 
     IEnumerator BlockCoroutine(GameObject m_Something)
