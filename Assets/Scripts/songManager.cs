@@ -16,6 +16,7 @@ public class songManager : MonoBehaviour
     public double MoE;
     public int inputDelayms;
     public Lane[] lanes;
+    public BallLane[] bLanes;
     public string fileLocation;
     public float noteTime;
     public float noteSpawnX;
@@ -90,6 +91,10 @@ public class songManager : MonoBehaviour
         maxScore = scoreController.CalculateMaxScore(array.Length);
 
         foreach (var lane in lanes)
+        {
+            lane.SetTimeStamps(array);
+        }
+        foreach (var lane in bLanes)
         {
             lane.SetTimeStamps(array);
         }

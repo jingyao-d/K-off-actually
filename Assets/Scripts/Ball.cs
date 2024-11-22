@@ -24,8 +24,6 @@ public class Ball : MonoBehaviour
             Destroy(gameObject);
         else
         {
-            GetComponent<Image>().enabled = true;
-            gameObject.transform.GetChild(0).gameObject.SetActive(true);
         }
 
     }
