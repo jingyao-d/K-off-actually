@@ -36,7 +36,7 @@ public class BallLane : MonoBehaviour
     {
         if (spawnIndex < timeStamps.Count)
         {
-            if (songManager.GetAudioSourceTime() >= timeStamps[spawnIndex] - songManager.Instance.noteTime + 1.35)
+            if (songManager.GetAudioSourceTime() >= timeStamps[spawnIndex] - songManager.Instance.noteTime + 1.55)
             {
                 var ball = Instantiate(ballPrefab, transform);
                 balls.Add(ball.GetComponent<Ball>());
