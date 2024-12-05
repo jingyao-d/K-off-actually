@@ -60,7 +60,9 @@ public class Lane : MonoBehaviour
             {
                 if (Math.Abs(audioTime - timeStamp) < MoE)
                 {
+                    Debug.Log("hit");
                     hitMissAudio.Hit();
+                    HitMiss.Hit();
                     print($"Hit on {inputIndex} note");
                     Destroy(notes[inputIndex].gameObject);
                     inputIndex++;
@@ -69,7 +71,9 @@ public class Lane : MonoBehaviour
                 }
                 else
                 {
+                    Debug.Log("miss");
                     hitMissAudio.Miss();
+                    HitMiss.Miss();
                     print($"Hit inaccurate on {inputIndex} note with {Math.Abs(audioTime - timeStamp)} delay");
                     scoreController.streak = 0;
                 }
