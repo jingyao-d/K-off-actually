@@ -546,16 +546,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 375119972}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2001542293}
+  m_Father: {fileID: 1752078315}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -75, y: -50}
+  m_AnchoredPosition: {x: -50.00002, y: -25.00002}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &375119974
@@ -1716,13 +1716,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 968039701}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.08717176, y: 0.89959127, z: -0.21045227, w: -0.37262106}
-  m_LocalPosition: {x: 25.567078, y: 17.404743, z: 25.664347}
+  m_LocalRotation: {x: -0.14644654, y: 0.8535535, z: -0.3535534, w: -0.35355324}
+  m_LocalPosition: {x: 25.567078, y: 30, z: 25.664347}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 25, y: 220, z: 0}
+  m_LocalEulerAnglesHint: {x: 45, y: 225, z: 0}
 --- !u!114 &968039705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3561,7 +3561,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: f3a5ea8cdf905954cbd94218e429e062, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f7927dd18bfa03c43aab52fc54c21f9b, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -3678,7 +3678,7 @@ MonoBehaviour:
   - {fileID: 1450296273}
   - {fileID: 501773038}
   - {fileID: 446268644}
-  fileLocation: test33.mid
+  fileLocation: Final Song.mid
   noteTime: 5
   noteSpawnX: -2250
   noteTapX: 1050
@@ -4216,6 +4216,7 @@ RectTransform:
   - {fileID: 1741500080}
   - {fileID: 1203672253}
   - {fileID: 1473169179}
+  - {fileID: 375119973}
   m_Father: {fileID: 2001542293}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4841,7 +4842,6 @@ RectTransform:
   - {fileID: 239919097}
   - {fileID: 1666580156}
   - {fileID: 1919619718}
-  - {fileID: 375119973}
   - {fileID: 1752078315}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
