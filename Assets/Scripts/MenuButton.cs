@@ -9,4 +9,9 @@ public class MenuButton : MonoBehaviour
     {
         SceneManager.LoadScene("Main Menu");
     }
+
+    public void Retry()
+    {
+        SceneManager.LoadScene("GameScene2");
+    }
 }
