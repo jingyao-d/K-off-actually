@@ -2515,6 +2515,7 @@ GameObject:
   - component: {fileID: 1057569915}
   - component: {fileID: 1057569919}
   - component: {fileID: 1057569920}
+  - component: {fileID: 1057569921}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -2580,7 +2581,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1666580157}
-  streakText: {fileID: 375119974}
+  streakText: {fileID: 1313213547}
   scorePanel: {fileID: 1752078314}
   starOne: {fileID: 979597959}
   starTwo: {fileID: 1741500079}
@@ -2604,13 +2605,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f95c1783f580420bb5203bd9e7fbf90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_S: {fileID: 0}
-  m_D: {fileID: 0}
-  m_F: {fileID: 0}
-  m_J: {fileID: 0}
-  m_K: {fileID: 0}
-  m_L: {fileID: 0}
-  m_Space: {fileID: 0}
+  m_S: {fileID: 2020748260}
+  m_D: {fileID: 1926898875}
+  m_F: {fileID: 1401702207}
+  m_J: {fileID: 463339815}
+  m_K: {fileID: 685847237}
+  m_L: {fileID: 1399650798}
+  m_Space: {fileID: 1430007424}
+--- !u!114 &1057569921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1057569912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69c4b9a0d103f443dbda98a9275e402e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1080686761
 GameObject:
   m_ObjectHideFlags: 0
