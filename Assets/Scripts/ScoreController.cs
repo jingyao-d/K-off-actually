@@ -10,16 +10,10 @@ public class ScoreController : MonoBehaviour
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] TextMeshProUGUI streakText;
     [SerializeField] GameObject scorePanel;
-    [SerializeField] GameObject starOne;
-    [SerializeField] GameObject starTwo;
-    [SerializeField] GameObject starThree;
     [SerializeField] TextMeshProUGUI endScoreText;
     public int score = 0;
     public int streak = 0;
     public int maxScore = 0;
-    [SerializeField] private float oneStarCutoff;
-    [SerializeField] private float twoStarCutoff;
-    [SerializeField] private float threeStarCutoff;
 
     void Start()
     {
@@ -37,26 +31,6 @@ public class ScoreController : MonoBehaviour
         maxScore = songManager.maxScore;
         endScoreText.text = "Score: " + score;
         scorePanel.SetActive(true);
-
-        starOne.SetActive(false);
-        starTwo.SetActive(false);
-        starThree.SetActive(false);
-
-        if(score > maxScore * threeStarCutoff)
-        {
-            starOne.SetActive(true);
-            starTwo.SetActive(true);
-            starThree.SetActive(true);
-        }
-        else if(score > maxScore * twoStarCutoff)
-        {
-            starOne.SetActive(true);
-            starTwo.SetActive(true);
-        }
-        else if(score > maxScore * oneStarCutoff)
-        {
-            starOne.SetActive(true);
-        }
     }
 
     public int CalculateMaxScore(int totalNoteCount)
