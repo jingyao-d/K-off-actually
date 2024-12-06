@@ -31,6 +31,7 @@ public class songManager : MonoBehaviour
     public int totalNoteCount;
     public int maxScore;
     public static MidiFile midiFile;
+    private bool songStarted = false;
     // Start is called before the first frame update
 
     void Start()
@@ -72,7 +73,7 @@ public class songManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!audioSource.isPlaying)
+        if(!audioSource.isPlaying && songStarted == true)
         {
             scoreController.ShowScoreScreen();
         }
@@ -104,6 +105,7 @@ public class songManager : MonoBehaviour
     public void StartSong()
     {
         audioSource.Play();
+        songStarted = true;
     }
 
     public static double GetAudioSourceTime()
