@@ -2580,7 +2580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 1666580157}
-  streakText: {fileID: 375119974}
+  streakText: {fileID: 1313213547}
   scorePanel: {fileID: 1752078314}
   starOne: {fileID: 979597959}
   starTwo: {fileID: 1741500079}
