@@ -14,14 +14,16 @@ public class ScoreController : MonoBehaviour
     public int score = 0;
     public int streak = 0;
     public int maxScore = 0;
+    public bool scorePanelDisabledOnLoad = false;
 
-    void Start()
-    {
-        songManager = FindObjectOfType<songManager>();
-        scorePanel.SetActive(false);
-    }
     void Update()
     {
+        if(scorePanelDisabledOnLoad == false)
+        {
+            songManager = FindObjectOfType<songManager>();
+            scorePanel.SetActive(false);
+            scorePanelDisabledOnLoad = true;
+        }
         scoreText.text = "Score: " + score;
         streakText.text = "x" + streak + " streak!";
     }
