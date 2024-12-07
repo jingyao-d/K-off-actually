@@ -749,7 +749,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   noteRestriction: 0
-  ballPrefab: {fileID: 921604209916852139, guid: d6b381f4cb872e045a65a0bc7e09c092, type: 3}
+  ballPrefab: {fileID: 4245415496896163459, guid: 001e5354cf77d9d428fc364ea4d8ffc3, type: 3}
   timeStamps: []
 --- !u!1 &463339815
 GameObject:
@@ -2281,7 +2281,6 @@ MonoBehaviour:
   score: 0
   streak: 0
   maxScore: 0
-  scorePanelDisabledOnLoad: 0
 --- !u!114 &1057569920
 MonoBehaviour:
   m_ObjectHideFlags: 0
